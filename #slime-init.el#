@@ -1,0 +1,36 @@
+;; emacsのwarning回避
+;; ロードパスの設定
+(let ((default-directory (expand-file-name "/Applications/Emacs.app/Contents/Resources/lisp")))
+  (add-to-list 'load-path default-directory)
+  (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
+      (normal-top-level-add-subdirs-to-load-path)))
+
+(setq load-path (append
+		 '("/Applications/Emacs.app/Contents/Resources/lisp/emacs-lisp"
+		   "/Applications/Emacs.app/Contents/Resources/lisp"
+		   "/Applications/Emacs.app/Contents/Resources/lisp/net"
+		   "/Applications/Emacs.app/Contents/Resources/lisp/progmodes"
+		   "/Applications/Emacs.app/Contents/Resources/lisp/url"
+		   )))
+
+;(load ("~/quicklisp/slime-helper.el"))
+;; Replace "sbcl" with the path to your implementation
+;(setq inferior-lisp-sliprogram "sbcl")
+;; SBCLをデフォルトのCommon Lisp処理系に設定
+;(setq inferior-lisp-program "~/bin/alisp")
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+;(setq inferior-lisp-program "/usr/local/bin/ccl64 -K utf-8")
+;(setq inferior-lisp-program "~/bin/lisp")
+
+;; ~/.emacs.d/slimeをload-pathに追加
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/slime"))
+;(add-to-list 'load-path (expand-file-name "~/.emacs.d/slime-2.23"))
+;(add-to-list 'load-path ("~/.emacs.d/slime"))
+;(add-to-list 'load-path "~/.emacs.d/elpa/slime-20130308.1112/")
+
+;; SLIMEのロード
+(require 'slime-autoloads)
+(require 'slime)
+(slime-setup '(slime-repl slime-fancy slime-banner))
+(setq slime-net-coding-system 'utf-8-unix)
+;(slime)
