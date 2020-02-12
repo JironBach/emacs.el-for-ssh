@@ -5,18 +5,21 @@
                    ;"~/.emacs.d"
                    "~/.emacs.d/ruby"
                    "~/.emacs.d/python"
-		               "~/.emacs.d/plugins"
-		               "~/.emacs.d/melpa"
-		               "~/.emacs.d/ext"
-		               "~/.emacs.d/melpa/recipes"
-                   "/Applications/Emacs.app/Contents/Resources/lisp/emacs-lisp"
-                   "/Applications/Emacs.app/Contents/Resources/lisp"
-                   "/Applications/Emacs.app/Contents/Resources/lisp/net"
-                   "/Applications/Emacs.app/Contents/Resources/lisp/progmodes"
-                   "/Applications/Emacs.app/Contents/Resources/lisp/url"
-                   "/Applications/Emacs.app/Contents/Resources/lisp/mail"
-                   "/Applications/Emacs.app/Contents/Resources/lisp/gnus"
-                   "/Applications/Emacs.app/Contents/Resources/lisp/play"
+                   "~/.emacs.d/plugins"
+                   "~/.emacs.d/melpa"
+                   "~/.emacs.d/ext"
+                   "~/.emacs.d/melpa/recipes"
+                   "~/.emacs.d/slime"
+		   "/usr/share/emacs/25.2/lisp/calendar"
+		   "/usr/share/emacs/25.2/lisp/emacs-lisp"
+		   "/usr/share/emacs/25.2/lisp"
+		   "/usr/share/emacs/25.2/lisp/language"
+		   "/usr/share/emacs/25.2/lisp/net"
+		   "/usr/share/emacs/25.2/lisp/progmodes"
+		   "/usr/share/emacs/25.2/lisp/url"
+		   "/usr/share/emacs/25.2/lisp/gnus"
+		   "/usr/share/emacs/25.2/lisp/mail"
+		   ""
                   )))
 
 ;; ---------------------------------------------------------------------------
@@ -30,7 +33,7 @@
 
 
 ;; emacsのwarning回避
-(load "/Applications/Emacs.app/Contents/Resources/lisp/language/japan-util")
+;(load "/Applications/Emacs.app/Contents/Resources/lisp/language/japan-util")
 ;; 環境を日本語、UTF-8にする
 (set-locale-environment nil)
 (set-language-environment "Japanese")
@@ -92,13 +95,11 @@ There are two things you can do about this warning:
 ;; git-gutter-fringe
 ;(global-git-gutter-mode 1)
 ;; magit
-(global-set-key (kbd "C-c C-g") 'magit-diff-working-tree)
+;(global-set-key (kbd "C-c C-g") 'magit-diff-working-tree)
 ;; ファイル編集時に，bufferを再読込
-(global-auto-revert-mode 1)
+;(global-auto-revert-mode 1)
 ;; ターミナル
 ;; eshell + shell-pop
 (setq shell-pop-shell-type '("eshell" "*eshell*" (lambda () (eshell))))
 (global-set-key (kbd "C-c o") 'shell-pop)
-
-
 
